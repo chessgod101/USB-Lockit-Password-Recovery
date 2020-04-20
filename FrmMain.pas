@@ -140,6 +140,7 @@ exit;
 end;
 if DeviceIoControl(fhnd,IOCTL_DISK_GET_DRIVE_GEOMETRY,nil,0,@dg,sizeof(dg),tmp,nil)=false then Begin
 MessageBox(USBLPWRMain.Handle,'Cannot Get Drive Geometry','Error',MB_OK);
+CloseHandle(fhnd);
 exit;
 End;
 
